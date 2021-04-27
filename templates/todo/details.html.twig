@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ todo.title }}
+	- Détails
+{% endblock %}
+
+{% block body %}
+	<div class="details-page">
+		<div class="container-details mx-auto px-3 py-4 bg-light col-9">
+			<h3>Liste choisie:
+				<span>{{ todo.title }}</span>
+			</h3>
+			<h5>Détails:</h5>
+			<p>{{ todo.content }}</p>
+			<p>Pour le:
+				{{ todo.deadline|date("d/m/Y") }}</p>
+			<a href="{{ path('edit', {'id':todo.id}) }}" class="btn btn-warning">EDITER</a>
+			{# <a href="delete" class="btn btn-danger text-uppercase">Effacer</a> #}
+
+			<a href="/" class="btn btn-primary ms-1">ACCUEIL</a>
+		</div>
+	</div>
+
+{% endblock %}

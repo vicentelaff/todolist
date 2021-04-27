@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+
+	<div class="container">
+		<div class="row justify-content-center">
+			<h3 class="my-5">Modifier TodoList "{{ todo.title }}"</h3>
+			{% for label, messages in app.flashes %}
+				{% for message in messages %}
+					<div class="alert alert-{{ label }} my-3">
+						{{ message }}
+					</div>
+				{% endfor %}
+			{% endfor %}
+			<div class="col-6">
+				{{ form(formTodo) }}
+					<form class="delete-form" action="{{ path('delete_csrf', { id: todo.id }) }}" method="post">
+						<input type="hidden" name="_method" value="DELETE">
+						<input type="hidden" name="token" value="{{ csrf_token('delete-item') }}"/>
+						<button type="submit" class="btn btn-danger">Supprimer</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+	{% endblock %}
+
+	{% block javascripts %}
+	
+	<script>
+	
+	const deleteForm = document.querySelector(".delete-form")
+	deleteForm.addEventListener("click", function(e){
+		e.preventDefault();
+		if(confirm("Voulez-vous supprimer cette liste ?")){
+			this.submit()
+		}
+
+	});
+	
+	</script>
+	
+	{% endblock %}
