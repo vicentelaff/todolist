@@ -15,10 +15,10 @@
 			<p>{{ todo.content }}</p>
 			<p>Pour le:
 				{{ todo.deadline|date("d/m/Y") }}</p>
-			<a href="{{ path('edit', {'id':todo.id}) }}" class="btn btn-warning">EDITER</a>
+			<a href="{{ path('edit', {'id':todo.id}) }}" class="btn btn-outline-warning">EDITER</a>
 			{# <a href="delete" class="btn btn-danger text-uppercase">Effacer</a> #}
 
-			<a href="/" class="btn btn-primary ms-1">ACCUEIL</a>
+			<a href="/" class="btn btn-outline-primary ms-1">ACCUEIL</a>
 		</div>
 	</div>
 

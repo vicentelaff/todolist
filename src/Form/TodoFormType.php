@@ -21,12 +21,14 @@ class TodoFormType extends AbstractType
         $builder
             ->add('title', TextType::class, [
                 "label" => "Titre",
+                "empty_data" =>"",
                 "attr" => [
                     "placeholder" => "Entrer titre"
                 ]
             ])
             ->add('content', TextareaType::class, [
                 "label" => "Contenu",
+                "empty_data" =>"",
                 "attr" => [
                     "placeholder" => "Entrer mémo"
                 ]
@@ -58,6 +60,9 @@ class TodoFormType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Todo::class,
+            "attr" => [
+                "novalidate" => "novalidate"
+            ]
         ]);
     }
 }

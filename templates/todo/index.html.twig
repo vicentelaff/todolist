@@ -8,7 +8,7 @@
 		<div class="container-title d-flex justify-content-between mt-5 mb-2">
 			<h4 class="mx-3">Vos Todo Lists:</h4>
 			{# j'ai choisi de créer le lien avec le nom de route au lieu de son URL car on pourrait changer l'URL pour mieux SEO #}
-			<a href="{{ path("create") }}" class="btn btn-success mx-3">NOUVELLE LISTE</a>
+			<a href="{{ path("create") }}" class="btn btn-outline-success mx-3">NOUVELLE LISTE</a>
 		</div>
 		<table class="table table-dark table-striped">
 			<thead>
@@ -30,9 +30,9 @@
 						<td>{{ t.createdAt|date("d/m/Y") }}</td>
 						<td>{{ t.deadline|date("d/m/Y") }}</td>
 						<td>
-							<a href="/details/{{ t.id }}" class="btn btn-info text-uppercase">Détails</a>
-							<a href="{{ path('edit', {'id':t.id}) }}" class="btn btn-warning">EDITER</a>
-							<a href="{{ path("delete", {"id": t.id }) }}" class="btn btn-danger text-uppercase">Effacer</a>
+							<a href="/details/{{ t.id }}" class="btn btn-outline-info text-uppercase">Détails</a>
+							<a href="{{ path('edit', {'id':t.id}) }}" class="btn btn-outline-warning">EDITER</a>
+							<a href="{{ path("delete", {"id": t.id }) }}" class="btn btn-outline-danger text-uppercase">Effacer</a>
 						</td>
 					</tr>
 				{% endfor %}

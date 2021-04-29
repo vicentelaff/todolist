@@ -18,7 +18,7 @@
 					<form class="delete-form" action="{{ path('delete_csrf', { id: todo.id }) }}" method="post">
 						<input type="hidden" name="_method" value="DELETE">
 						<input type="hidden" name="token" value="{{ csrf_token('delete-item') }}"/>
-						<button type="submit" class="btn btn-danger">Supprimer</button>
+						<button type="submit" class="btn btn-outline-danger">Supprimer</button>
 					</form>
 				</div>
 			</div>
